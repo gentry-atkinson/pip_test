@@ -1,5 +1,9 @@
+###########Requirements for PIP Test##################
+
 pandas
 numpy
 matplotlib
 sklearn
 tsfresh
+scipy
+fastpip
