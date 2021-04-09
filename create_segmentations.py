@@ -1,6 +1,6 @@
 #Author: Gentry Atkinson
 #Organization: Texas University
-#Data: 6 April, 2021
+#Data: 7 April, 2021
 #Create segmentations of the raw data file using 3 methds
 
 #Method 1: regular breaks every 150 samples
