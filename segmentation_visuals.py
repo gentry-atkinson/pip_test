@@ -42,8 +42,8 @@ if __name__ == "__main__":
     plt.figure()
 
     NUM_SEGMENTS = len(s)//150
-    pips = pip([(i, j) for i,j in enumerate(s)], NUM_SEGMENTS+1) #n+1 pips create n segments
-    trim_pips = pip([(i, j) for i,j in enumerate(s)], NUM_SEGMENTS+2)
+    pips = pip([(i, j) for i,j in enumerate(s)], NUM_SEGMENTS+1, distance='vertical') #n+1 pips create n segments
+    trim_pips = pip([(i, j) for i,j in enumerate(s)], NUM_SEGMENTS+2, distance='vertical')
     trim_pips = trim_pips[1:-1] #remove start and end points
 
     plt.plot(range(len(s)), s)

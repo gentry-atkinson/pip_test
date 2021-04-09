@@ -36,8 +36,8 @@ if __name__ == "__main__":
             #print(l)
 
         num_segments = len(s)//150
-        pips = pip([(i, j) for i,j in enumerate(s)], num_segments+1) #n+1 pips create n segments
-        trim_pips = pip([(i, j) for i,j in enumerate(s)], num_segments+2)
+        pips = pip([(i, j) for i,j in enumerate(s)], num_segments+1, distance='vertical') #n+1 pips create n segments
+        trim_pips = pip([(i, j) for i,j in enumerate(s)], num_segments+2, distance='vertical')
         trim_pips = trim_pips[1:-1] #remove start and end points
 
         #Write segmentations using method 2
