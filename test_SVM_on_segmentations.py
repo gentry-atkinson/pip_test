@@ -78,4 +78,35 @@ results_file.write('Accuracy: {}\n'.format(accuracy_score(y_test, y_pred, normal
 results_file.write('Precision: {}\n'.format(precision_score(y_test, y_pred, average='micro')))
 results_file.write('Recall: {}\n'.format(recall_score(y_test, y_pred, average='micro')))
 
+#Read file for segmentation method 3
+all_m3 = np.genfromtxt('seg_and_resamp_from_pips.csv')
+m3_samples = [i[1:] for i in all_m3]
+m3_labels = [i[0] for i in all_m3]
+print('M3 Number of instances: ', len(m3_samples))
+print('M3 Number of labels: ', len(m3_labels))
+print('M3 Length of instances: ', len(m3_samples[0]))
+m3_features = [get_features_from_one_signal(i) for i in m3_samples]
+print('M3 Number of feature vectors: ', len(m3_features))
+print('M3 Feature vector length: ', len(m3_features[0]))
+
+#Fit SVM to method 3 segments w/o feature_extraction
+results_file.write('\n\nSVM on Method 3, No Feature extraction\n')
+X_train, X_test, y_train, y_test = train_test_split(m3_samples, m3_labels, shuffle=True, test_size=0.2)
+test_SVM = svm.SVC()
+test_SVM.fit(X_train, y_train)
+y_pred = test_SVM.predict(X_test)
+results_file.write('Accuracy: {}\n'.format(accuracy_score(y_test, y_pred, normalize=True)))
+results_file.write('Precision: {}\n'.format(precision_score(y_test, y_pred, average='micro')))
+results_file.write('Recall: {}\n'.format(recall_score(y_test, y_pred, average='micro')))
+
+#Fit SVM to method 3 segments w/ feature_extraction
+results_file.write('\n\nSVM on Method 3, With Feature extraction\n')
+X_train, X_test, y_train, y_test = train_test_split(m3_features, m3_labels, shuffle=True, test_size=0.2)
+test_SVM = svm.SVC()
+test_SVM.fit(X_train, y_train)
+y_pred = test_SVM.predict(X_test)
+results_file.write('Accuracy: {}\n'.format(accuracy_score(y_test, y_pred, normalize=True)))
+results_file.write('Precision: {}\n'.format(precision_score(y_test, y_pred, average='micro')))
+results_file.write('Recall: {}\n'.format(recall_score(y_test, y_pred, average='micro')))
+
 results_file.close()
