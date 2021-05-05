@@ -31,8 +31,8 @@ if __name__ == "__main__":
         l = str(instances['label'][i])
 
         #Write segmentations using method 1
-        for i in range(0, len(s)-150, 150):
-            m1_file.write(l + ' ' + ' '.join([str(x) for x in s[i:i+150]]) + '\n')
+        for j in range(0, len(s)-150, 150):
+            m1_file.write(l + ' ' + ' '.join([str(x) for x in s[j:j+150]]) + '\n')
             #print(l)
 
         num_segments = len(s)//150
@@ -51,8 +51,8 @@ if __name__ == "__main__":
             #print(l)
 
         #Write segmentations using method 3
-        for i in range(len(pips)-1):
-            m3_file.write(l + ' ' + ' '.join([str(t) for t in resample(s[pips[i][0]:pips[i+1][0]], 150)]) + '\n')
+        for j in range(len(pips)-1):
+            m3_file.write(l + ' ' + ' '.join([str(t) for t in resample(s[pips[j][0]:pips[j+1][0]], 150)]) + '\n')
             #print(l)
 
     print('done')
