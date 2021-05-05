@@ -44,10 +44,10 @@ if __name__ == "__main__":
         for p in trim_pips:
             if p[0]<75:
                 m2_file.write(l + ' ' + ' '.join(str(i) for i in s[:150]) + '\n')
-            elif len(s) - p[0] < 75:
+            elif len(s) - p[0] < 76:
                 m2_file.write(l + ' ' + ' '.join(str(i) for i in s[-150:]) + '\n')
             else:
-                m2_file.write(l + ' ' + ' '.join(str(i) for i in s[p[0]-74:p[0]+75]) + '\n')
+                m2_file.write(l + ' ' + ' '.join(str(i) for i in s[p[0]-75:p[0]+75]) + '\n')
             #print(l)
 
         #Write segmentations using method 3
