@@ -20,3 +20,5 @@ echo Creating Segmentation Visualizations
 python3 segmentation_visuals.py
 echo Training and Testing SVM
 python3 test_SVM_on_segmentations.py
+echo Computing DB Indexes
+python3 db_on_segments.py
