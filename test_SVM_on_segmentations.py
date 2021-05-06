@@ -14,7 +14,7 @@ import numpy as np
 from utils.ts_feature_toolkit import get_features_from_one_signal
 
 #Open results file
-results_file = open('SVM_test_results.txt', 'w+')
+results_file = open('results/SVM_test_results.txt', 'w+')
 
 #Read file for segmentation method 1
 all_m1 = np.genfromtxt('seg_by_reg_division.csv', delimiter=',')

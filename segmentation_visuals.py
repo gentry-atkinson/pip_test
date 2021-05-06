@@ -35,7 +35,7 @@ if __name__ == "__main__":
     plt.plot(range(len(s)), s)
     for x in reg_divisions:
         plt.axvline(x=x, color='red')
-    plt.savefig('plot_marked_every_150.pdf')
+    plt.savefig('imgs/plot_marked_every_150.pdf')
 
     #Plot the segment with PIPs shown as red lines
 
@@ -49,21 +49,21 @@ if __name__ == "__main__":
     plt.plot(range(len(s)), s)
     for (x, y) in trim_pips:
         plt.axvline(x=x, color='red')
-    plt.savefig('plot_marked_with_pips.pdf')
+    plt.savefig('imgs/plot_marked_with_pips.pdf')
 
     #Plot segments produced by 3 methods
 
     plt.figure()
     plt.plot(range(150,300, 1), s[150:300])
-    plt.savefig('one_seg_by_m1.pdf')
+    plt.savefig('imgs/one_seg_by_m1.pdf')
 
     plt.figure()
     plt.plot(range(150), s[trim_pips[1][0]-75:trim_pips[1][0]+75])
-    plt.savefig('one_seg_by_m2.pdf')
+    plt.savefig('imgs/one_seg_by_m2.pdf')
 
     plt.figure()
     plt.plot(range(150), resample(s[pips[1][0]:pips[2][0]], 150))
-    plt.savefig('one_seg_by_m3.pdf')
+    plt.savefig('imgs/one_seg_by_m3.pdf')
 
 
     #plt.show()

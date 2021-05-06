@@ -12,7 +12,6 @@ method for generalized time series embedding.
   Create Segmentations-> Creates fixed length instances from raw data by 3 methods\
     **The first value in the seg CSVs is the label of the instance**\
   Initial Visualization-> Plots 2 figures of raw data\
-  Segmentation Visuals-> Segments on instance by 3 methods w and wo feature
-    extraction and plots all 6\
+  Segmentation Visuals-> Plots 5 visuals to better understand segmentation.
   Test SVM on Segmentations-> Train and test an SVM on the instance sets created
     by the 3 methods of segmentation.\

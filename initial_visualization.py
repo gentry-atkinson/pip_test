@@ -35,7 +35,7 @@ if __name__ == "__main__":
         s = [float(x) for x in s.split(' ') if x]
         # print(len(s))
         plt.plot(s, c='red')
-    plt.savefig('pip_test_data_raw_plot.pdf')
+    plt.savefig('imgs/pip_test_data_raw_plot.pdf')
     #plt.show()
 
     features = []
@@ -53,4 +53,4 @@ if __name__ == "__main__":
         plt.scatter(v[0], v[1], c='blue', marker=".")
     for v in vis[2500:5000]:
         plt.scatter(v[0], v[1], c='red', marker=".")
-    plt.savefig('pip_test_data_tsne.pdf')
+    plt.savefig('imgs/pip_test_data_tsne.pdf')
