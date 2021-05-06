@@ -22,3 +22,5 @@ echo Training and Testing SVM
 python3 test_SVM_on_segmentations.py
 echo Computing DB Indexes
 python3 db_on_segments.py
+echo Training and Testing NN
+python3 test_nn_on_segmentations.py
