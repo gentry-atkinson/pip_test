@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
         #Write segmentations using method 1
         for j in range(0, len(s)-150, 150):
-            m1_file.write(l + ' ' + ' '.join([str(x) for x in s[j:j+150]]) + '\n')
+            m1_file.write(l + ', ' + ', '.join([str(x) for x in s[j:j+150]]) + '\n')
             #print(l)
 
         num_segments = len(s)//150
@@ -43,16 +43,16 @@ if __name__ == "__main__":
         #Write segmentations using method 2
         for p in trim_pips:
             if p[0]<75:
-                m2_file.write(l + ' ' + ' '.join(str(i) for i in s[:150]) + '\n')
+                m2_file.write(l + ', ' + ', '.join(str(i) for i in s[:150]) + '\n')
             elif len(s) - p[0] < 76:
-                m2_file.write(l + ' ' + ' '.join(str(i) for i in s[-150:]) + '\n')
+                m2_file.write(l + ', ' + ', '.join(str(i) for i in s[-150:]) + '\n')
             else:
-                m2_file.write(l + ' ' + ' '.join(str(i) for i in s[p[0]-75:p[0]+75]) + '\n')
+                m2_file.write(l + ', ' + ', '.join(str(i) for i in s[p[0]-75:p[0]+75]) + '\n')
             #print(l)
 
         #Write segmentations using method 3
         for j in range(len(pips)-1):
-            m3_file.write(l + ' ' + ' '.join([str(t) for t in resample(s[pips[j][0]:pips[j+1][0]], 150)]) + '\n')
+            m3_file.write(l + ', ' + ', '.join([str(t) for t in resample(s[pips[j][0]:pips[j+1][0]], 150)]) + '\n')
             #print(l)
 
     print('done')

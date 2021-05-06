@@ -7,3 +7,4 @@ sklearn
 tsfresh
 scipy
 fastpip
+math

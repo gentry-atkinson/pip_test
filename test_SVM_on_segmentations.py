@@ -17,7 +17,7 @@ from utils.ts_feature_toolkit import get_features_from_one_signal
 results_file = open('SVM_test_results.txt', 'w+')
 
 #Read file for segmentation method 1
-all_m1 = np.genfromtxt('seg_by_reg_division.csv')
+all_m1 = np.genfromtxt('seg_by_reg_division.csv', delimiter=',')
 m1_samples = [i[1:] for i in all_m1]
 m1_labels = [i[0] for i in all_m1]
 print('M1 Number of instances: ', len(m1_samples))
@@ -48,7 +48,7 @@ results_file.write('Precision: {}\n'.format(precision_score(y_test, y_pred, aver
 results_file.write('Recall: {}\n'.format(recall_score(y_test, y_pred, average='micro')))
 
 #Read file for segmentation method 2
-all_m2 = np.genfromtxt('seg_cen_on_pip.csv')
+all_m2 = np.genfromtxt('seg_cen_on_pip.csv', delimiter=',')
 m2_samples = [i[1:] for i in all_m2]
 m2_labels = [i[0] for i in all_m2]
 print('M2 Number of instances: ', len(m2_samples))
@@ -79,7 +79,7 @@ results_file.write('Precision: {}\n'.format(precision_score(y_test, y_pred, aver
 results_file.write('Recall: {}\n'.format(recall_score(y_test, y_pred, average='micro')))
 
 #Read file for segmentation method 3
-all_m3 = np.genfromtxt('seg_and_resamp_from_pips.csv')
+all_m3 = np.genfromtxt('seg_and_resamp_from_pips.csv', delimiter=',')
 m3_samples = [i[1:] for i in all_m3]
 m3_labels = [i[0] for i in all_m3]
 print('M3 Number of instances: ', len(m3_samples))

@@ -9,6 +9,7 @@ from scipy import signal
 import numpy as np
 from tsfresh.feature_extraction import feature_calculators as fc
 from tsfresh.utilities.dataframe_functions import impute
+import math
 
 def get_normalized_signal_energy(X):
     return np.mean(np.square(X))
@@ -36,11 +37,12 @@ def get_features_from_one_signal(X, sample_rate=50):
     c, v = zip(*spectral_density)
     v = np.asarray(v)
 
-    return [mean,
+    return[
+        mean,
         stdev,
         abs_energy,
         sum_of_changes,
-        autoc,
+        0.0 if math.isnan(autoc) else float(autoc),
         count_above_mean,
         count_below_mean,
         kurtosis,
@@ -50,6 +52,8 @@ def get_features_from_one_signal(X, sample_rate=50):
         sample_entropy,
         v[0], v[1], v[2], v[3], v[4], v[5]
     ]
+    #return feature_vec
+    #return [0.0 if i is None or i == 'nan' else i for i in feature_vec]
 
 def get_features_for_set(X, sample_rate=50, num_samples=100):
     sample_length = len(X[0])

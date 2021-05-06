@@ -11,7 +11,7 @@
 #Method 3: Divide segments at PIPs, resample each segment to 150
 
 echo Creating Dataset
-python3 create_datset.py
+python3 create_dataset.py
 echo Segmenting Dataset
 python3 create_segmentations.py
 echo Creating Dataset Visualizations
