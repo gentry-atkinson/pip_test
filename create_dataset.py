@@ -27,11 +27,11 @@ if __name__ == "__main__":
             'variance_amplitude': 2
         },
         {
-            'avg_pattern_length':3,
+            'avg_pattern_length':4,
             'avg_amplitude':1,
             'default_variance':2,
             'variance_pattern_length': 11,
-            'variance_amplitude': 3
+            'variance_amplitude': 1
         },
     ]
     print('Preparing data with ', len(classes), ' classes.')

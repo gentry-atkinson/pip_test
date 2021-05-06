@@ -15,7 +15,7 @@ python3 create_dataset.py
 echo Segmenting Dataset
 python3 create_segmentations.py
 echo Creating Dataset Visualizations
-python3 initial_visualizations.py
+python3 initial_visualization.py
 echo Creating Segmentation Visualizations
 python3 segmentation_visuals.py
 echo Training and Testing SVM
