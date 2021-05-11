@@ -17,7 +17,7 @@ Maybe I'll normalize the data before writing it.
 '''
 
 if __name__ == "__main__":
-    print('Preparing 5000 instances of 500 to 1000 seconds (10 to 20 seconds at 50Hz)')
+    print('Preparing 5000 instances of 500 to 1000 samples (10 to 20 seconds at 50Hz)')
     classes = [
         {
             'avg_pattern_length':3,
