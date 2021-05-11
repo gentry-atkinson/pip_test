@@ -14,10 +14,11 @@ import pandas
 import os
 
 files = [
-    #'dog1_walk1.csv',
-    #'dog1_walk2.csv',
+    'dog1_walk1.csv',
+    'dog1_walk2.csv',
     'human1_walk1.csv',
-    'human1_walk2.csv'
+    'human1_walk2.csv',
+    'human1_walk3.csv'
 ]
 
 if __name__ == "__main__":
