@@ -7,7 +7,7 @@
 #Method 2: 150 samples centered on a PIP
 #Method 3: Divide segments at PIPs, resample each segment to 150
 
-from utils.build_simple_dnn import get_trained_dnn
+import utils.build_simple_dnn as bs
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 import numpy as np
@@ -32,7 +32,7 @@ print('M1 Feature vector length: ', len(m1_features[0]))
 results_file.write('NN on Method 1, No Feature extraction\n')
 X_train, X_test, y_train, y_test = map(np.array, train_test_split(m1_samples, m1_labels, shuffle=True, test_size=0.2))
 y_train = to_categorical(y_train)
-test_NN = get_trained_dnn(X_train, y_train)
+test_NN = bs.get_trained_dnn(X_train, y_train)
 y_pred = np.argmax(test_NN.predict(X_test), axis=-1)
 results_file.write('Accuracy: {}\n'.format(accuracy_score(y_test, y_pred, normalize=True)))
 results_file.write('Precision: {}\n'.format(precision_score(y_test, y_pred, average='micro')))
@@ -42,7 +42,7 @@ results_file.write('Recall: {}\n'.format(recall_score(y_test, y_pred, average='m
 results_file.write('\n\nNN on Method 1, With Feature extraction\n')
 X_train, X_test, y_train, y_test = map(np.array,train_test_split(m1_features, m1_labels, shuffle=True, test_size=0.2))
 y_train = to_categorical(y_train)
-test_NN = get_trained_dnn(X_train, y_train)
+test_NN = bs.get_trained_dnn(X_train, y_train)
 y_pred = np.argmax(test_NN.predict(X_test), axis=-1)
 results_file.write('Accuracy: {}\n'.format(accuracy_score(y_test, y_pred, normalize=True)))
 results_file.write('Precision: {}\n'.format(precision_score(y_test, y_pred, average='micro')))
@@ -63,7 +63,7 @@ print('M2 Feature vector length: ', len(m2_features[0]))
 results_file.write('\n\nNN on Method 2, No Feature extraction\n')
 X_train, X_test, y_train, y_test =  map(np.array,train_test_split(m2_samples, m2_labels, shuffle=True, test_size=0.2))
 y_train = to_categorical(y_train)
-test_NN = get_trained_dnn(X_train, y_train)
+test_NN = bs.get_trained_dnn(X_train, y_train)
 y_pred = np.argmax(test_NN.predict(X_test), axis=-1)
 results_file.write('Accuracy: {}\n'.format(accuracy_score(y_test, y_pred, normalize=True)))
 results_file.write('Precision: {}\n'.format(precision_score(y_test, y_pred, average='micro')))
@@ -73,7 +73,7 @@ results_file.write('Recall: {}\n'.format(recall_score(y_test, y_pred, average='m
 results_file.write('\n\nNN on Method 2, With Feature extraction\n')
 X_train, X_test, y_train, y_test =  map(np.array,train_test_split(m2_features, m2_labels, shuffle=True, test_size=0.2))
 y_train = to_categorical(y_train)
-test_NN = get_trained_dnn(X_train, y_train)
+test_NN = bs.get_trained_dnn(X_train, y_train)
 y_pred = np.argmax(test_NN.predict(X_test), axis=-1)
 results_file.write('Accuracy: {}\n'.format(accuracy_score(y_test, y_pred, normalize=True)))
 results_file.write('Precision: {}\n'.format(precision_score(y_test, y_pred, average='micro')))
@@ -94,7 +94,7 @@ print('M3 Feature vector length: ', len(m3_features[0]))
 results_file.write('\n\nNN on Method 3, No Feature extraction\n')
 X_train, X_test, y_train, y_test =  map(np.array,train_test_split(m3_samples, m3_labels, shuffle=True, test_size=0.2))
 y_train = to_categorical(y_train)
-test_NN = get_trained_dnn(X_train, y_train)
+test_NN = bs.get_trained_dnn(X_train, y_train)
 y_pred = np.argmax(test_NN.predict(X_test), axis=-1)
 results_file.write('Accuracy: {}\n'.format(accuracy_score(y_test, y_pred, normalize=True)))
 results_file.write('Precision: {}\n'.format(precision_score(y_test, y_pred, average='micro')))
@@ -104,7 +104,7 @@ results_file.write('Recall: {}\n'.format(recall_score(y_test, y_pred, average='m
 results_file.write('\n\nNN on Method 3, With Feature extraction\n')
 X_train, X_test, y_train, y_test =  map(np.array,train_test_split(m3_features, m3_labels, shuffle=True, test_size=0.2))
 y_train = to_categorical(y_train)
-test_NN = get_trained_dnn(X_train, y_train)
+test_NN = bs.get_trained_dnn(X_train, y_train)
 y_pred = np.argmax(test_NN.predict(X_test), axis=-1)
 results_file.write('Accuracy: {}\n'.format(accuracy_score(y_test, y_pred, normalize=True)))
 results_file.write('Precision: {}\n'.format(precision_score(y_test, y_pred, average='micro')))

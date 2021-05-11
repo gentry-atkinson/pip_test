@@ -26,3 +26,11 @@ echo Training and Testing NN
 python3 test_nn_on_segmentations.py
 echo Segmenting Realworld Dataset
 python3 create_segmentations_rw.py
+echo Generating Realworld Visuals
+python3 initial_visualization_rw.py
+echo Training and Testing SVM on RW Data
+python3 test_SVM_on_segmentations_rw.py
+echo Training and Testing NN on RW Data
+python3 test_nn_on_segmentations_rw.py
+echo Computing DB Indexes for RW data
+python3 db_on_segments_rw.py
